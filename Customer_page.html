@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customer_page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url("currency.avif");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        img {
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            height: 200px;
+            width: 200px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: rgb(5, 5, 5);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin: 10px;
+        }
+
+        .scrolling-text-container {
+            width: 100%;
+            height: 50px;
+            background-color: yellow;
+            color: red;
+            text-align: center;
+            overflow: hidden;
+            position: fixed;
+            bottom: 0;
+            z-index: 9999;
+        }
+
+        .scrolling-text {
+            display: inline-block;
+            margin: 0;
+            padding: 10px;
+            white-space: nowrap;
+            font-size: 18px;
+            font-weight: bold;
+            animation: marquee 10s linear infinite;
+        }
+        .button:hover{
+            color: black;
+            background-color: aqua;
+        }
+        
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="no user.jpg" alt="Profile Picture">
+        <h1>Welcome! User</h1>
+        <a href="transaction.html" class="button">Transaction History</a>
+        <a href="payment.html" class="button">Payment</a>
+    </div>
+
+    <div class="scrolling-text-container">
+        <marquee behavior="scroll" direction="left">
+            <p class="scrolling-text">
+                BEWARE OF FRAUD CALLS. WE NEVER SHARE YOUR OTP, CVV DETAILS. WE NEVER ASK FOR SUCH DETAILS.
+            </p>
+        </marquee>
+    </div>
+</body>
+</html>

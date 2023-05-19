@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARKS FOUNDATION BANK</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("digital.avif");
+        }
+        
+        h1 {
+            color: #f009c2;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-right: 10px;
+            color: white;
+        }
+        
+        .form-group input {
+            width: 300px;
+            padding: 5px;
+            color: rgb(11, 11, 11);
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #d70f0f;
+            text-decoration: none;
+            border: 1px solid #db0f0f;
+            border-radius: 4px;
+        }
+
+        .processing-page {
+            background-color: #eaefe9;
+            padding: 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .processing-page h2 {
+            color: #f00;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .done-page {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .done-page h2 {
+            color: #0f0;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .done-page img {
+            margin-bottom: 20px;
+        }
+
+        .navigation-buttons {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function clearFields() {
+            document.getElementById('sender').value = '';
+            document.getElementById('receiver').value = '';
+            document.getElementById('amount').value = '';
+        }
+
+        function showProcessingPage() {
+            document.getElementById('transferForm').style.display = 'none';
+            document.getElementById('processingPage').style.display = 'block';
+            setTimeout(showDonePage, 4000);
+        }
+
+        function showDonePage() {
+            document.getElementById('processingPage').style.display = 'none';
+            document.getElementById('donePage').style.display = 'block';
+            setTimeout(returnToOriginalPage, 4000);
+        }
+
+        function returnToOriginalPage() {
+            document.getElementById('transferForm').style.display = 'block';
+            document.getElementById('donePage').style.display = 'none';
+            clearFields();
+        }
+    </script>
+</head>
+<body>
+    <h1>SPARKS FOUNDATION BANK</h1>
+    
+    <form id="transferForm">
+        <div class="form-group">
+            <label for="sender">Sender:</label>
+            <input type="text" id="sender" name="sender">
+        </div>
+        
+        <div class="form-group">
+            <label for="receiver">Receiver:</label>
+            <input type="text" id="receiver" name="receiver">
+        </div>
+        
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount">
+        </div>
+        
+        <div class="form-group">
+            <button type="button" onclick="showProcessingPage();">Transfer</button>
+        </div>
+    </form>
+
+    <div id="processingPage" class="processing-page">
+        <h2>Transaction is processing...</h2>
+        <img src="transaction_symbol.png" alt="Transaction Symbol" height="100px" width="100px">
+    </div>
+
+    <div id="donePage" class="done-page">
+        <h2>Payment Successful</h2>
+        <img src="done_symbol.png" alt="Done Symbol" height="100px" width="100px">
+    </div>
+
+    <div class="navigation-buttons">
+        <button onclick="window.location.href = 'welcome_page.html';">Home</button>
+        <button onclick="window.location.href = 'customer_page.html';">Back</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-image: url("login.avif");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: url("login.avif");
+           
+        }   
+
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+
+        .container {
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            height: 300px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .box h2 {
+            margin-bottom: 10px;
+        }
+
+        .box form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+
+        .box input[type="submit"] {
+            width: auto;
+            padding: 5px 15px;
+        }
+
+        .box h2 {
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .navigation-buttons button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #d70f0f;
+            text-decoration: none;
+            border: 1px solid #db0f0f;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .login-button {
+            margin-top: 10px;
+            padding: 15px 30px;
+            background-color: #f0f0f0;
+            color: #d70f0f;
+            text-decoration: none;
+            border: 1px solid #db0f0f;
+            border-radius: 4px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img src="appicon-style-banking-flat-icon-.png" alt="" height="20px widht=20px"></li>
+                <li>THE SPARKS FOUNDATION BANK</li>
+                <li class="right-align"><a href="welcome_page.html">Home</a></li>
+                <li class="right-align">Contact us</li>
+                <li class="right-align">About us</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="box">
+            <h2>SPARKS FOUNDATION BANK</h2>
+            <h3>Login</h3>
+            <form>
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+            </form>
+            <button class="login-button" onclick="window.location.href='Customer_page.html'">Login</button>
+        </div>
+        <div class="navigation-buttons">
+            <button onclick="window.location.href = 'welcome_page.html';">Back</button>
+        </div>
+    </div>
+</body>
+
+</html>
